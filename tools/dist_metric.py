@@ -31,17 +31,15 @@ def distance_between_points(p1, p2):
         )
 
 
-def project_point(p):
+def project_point(point):
     """
-    Maps (x,y,z) coordinates to ternary plot coordinates.
-    Parameters
-    ----------
-    p: 3-tuple
-        The point to be projected p = (x, y, z)
-        The order of the coordinates, counterclockwise from the origin
+    :param p: 3-tuple with following order:
+        lower axis coordinate, right axis coordinate, left axis coordinate 
+    :returns: 1d array with x, y in cartesian coordinates
+    
     """
-    a = p[0]
-    b = p[1]
+    a = point[0]
+    b = point[1]
     x = a + b / 2.
     y = SQRT3OVER2 * b
     return np.array([x, y])
